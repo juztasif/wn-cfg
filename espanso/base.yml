@@ -1,0 +1,89 @@
+# Location : $HOME\AppData\Roaming\espanso\match\
+matches:
+  # --- General ---
+  - trigger: ":newt"
+    replace: |
+      - trigger: "#"
+        replace: "#"
+
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d-%m-%Y"
+
+  - trigger: ":tod"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d %b %y"
+
+  - trigger: ":ftod"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d%b%y"
+
+
+  # --- Email Shortcuts ---
+  - trigger: "@user"
+    replace: "user@mail.com"
+
+
+  # --- Google Services ---
+  - trigger: ":yt"
+    replace: "https://www.youtube.com/"
+
+  - trigger: ":g0k"
+    replace: "https://keep.google.com/u/0/"
+  - trigger: ":g1k"
+    replace: "https://keep.google.com/u/1/"
+
+  - trigger: ":g0m"
+    replace: "https://mail.google.com/mail/u/0/inbox"
+  - trigger: ":g1m"
+    replace: "https://mail.google.com/mail/u/1/#inbox"
+
+  - trigger: "g0d"
+    replace: "https://drive.google.com/drive/u/0/my-drive"
+  - trigger: "g1d"
+    replace: "https://drive.google.com/drive/u/1/my-drive"
+
+  - trigger: "g0a"
+    replace: "https://myaccount.google.com/?authuser=0"
+  - trigger: "g1a"
+    replace: "https://myaccount.google.com/?authuser=1"
+
+  # --- Entertainment ---
+  - trigger: ":ft"
+    replace: "https://flixtor.li/home"
+  - trigger: ":at"
+    replace: "https://alphatron.tv/home"
+  - trigger: ":ha"
+    replace: "https://hianime.sx/home"
+
+  # --- AI & Chat Links ---
+  - trigger: ":gk"
+    replace: "https://grok.com/?referrer=website"
+  - trigger: ":gpt"
+    replace: "https://chatgpt.com/"
+  - trigger: ":cp"
+    replace: "https://copilot.microsoft.com/chats/"
+  - trigger: ":ppy"
+    replace: "https://www.perplexity.ai/"
+
+  # --- Utilities ---
+  - trigger: ":tmp"
+    replace: "https://temp-mail.org/"
+  - trigger: ":gt"
+    replace: "https://translate.google.com/"
+  - trigger: ":gh"
+    replace: "https://github.com/"
+
+
