@@ -59,7 +59,7 @@ function ws {
 }
 
 # Git Commands
-# function git {
+# function gt {
 #     param (
 #         [Parameter(Mandatory=$true)]
 #         [string]$Command,
