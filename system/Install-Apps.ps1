@@ -16,6 +16,7 @@ if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
 
 # List of applications to install with their winget IDs
 $apps = @(
+    @{ Name = "Arc Browser"; ID = "TheBrowserCompany.Arc" },
     @{ Name = "Bitwarden"; ID = "Bitwarden.Bitwarden" },
     @{ Name = "Brave Browser"; ID = "Brave.Brave" },
     @{ Name = "Espanso"; ID = "Espanso.Espanso" },
@@ -23,28 +24,26 @@ $apps = @(
     @{ Name = "Flow Launcher"; ID = "Flow-Launcher.Flow-Launcher" },
     @{ Name = "Git"; ID = "Git.Git" },
     @{ Name = "Google Chrome"; ID = "Google.Chrome" },
+    @{ Name = "Quick Share"; ID = "Google.QuickShare" },
     @{ Name = "KeePassXC"; ID = "KeePassXC.KeePassXC" },
+    @{ Name = "LibreWolf"; ID = "LibreWolf.LibreWolf" },
     @{ Name = "MarkText"; ID = "marktext.marktext" },
     @{ Name = "Neovim"; ID = "Neovim.Neovim" },
+    @{ Name = "Oh My Posh"; ID = "JanDeDobbeleer.OhMyPosh" },    
     @{ Name = "Notion"; ID = "Notion.Notion" },
     @{ Name = "Python 3.12"; ID = "Python.Python.3.12" },
-    @{ Name = "Revo Uninstaller"; ID = "RevoUninstaller.RevoUninstaller" },
+    @{ Name = "Revo Uninstaller"; ID = "RevoUninstaller.RevoUninstaller" }, 
+    @{ Name = "Sublime Text 4"; ID = "SublimeHQ.SublimeText.4" },
     @{ Name = "Telegram"; ID = "Telegram.TelegramDesktop" },
     @{ Name = "Todoist"; ID = "Doist.Todoist" },
     @{ Name = "Transmission"; ID = "Transmission.Transmission" },
     @{ Name = "VLC"; ID = "VideoLAN.VLC" },
     @{ Name = "Visual Studio Code"; ID = "Microsoft.VisualStudioCode" },
-    @{ Name = "Waterfox"; ID = "Waterfox.Waterfox" },
     @{ Name = "WhatsApp"; ID = "9NKSQGP7F2NH" },
     @{ Name = "Zoxide"; ID = "ajeetdsouza.zoxide" }
 )
 
-# Applications that may not be available in winget or have unclear IDs
-$unavailableApps = @(
-    "Arc Browser",       # Not commonly available in winget
-    "QuickShare",        # May require specific vendor ID or not available
-    "TranslucentTB"      # Often not available in winget
-)
+
 
 # Inform user about potentially unavailable apps
 Write-Host "Note: The following applications may not be available via winget or may require manual installation:"
