@@ -129,10 +129,10 @@ function em {
     )
 
     switch ($name) {
-        "nw"  { nvim "$HOME\Documents\Tools\Scripts\nw.psm1" }
-        "man" { nvim "$HOME\Documents\Tools\Scripts\man.psm1" }
-        "adb" { nvim "$HOME\Documents\Tools\Scripts\adb.psm1" }
-        "py"  { nvim "$HOME\Documents\Tools\Scripts\py.psm1" }
+        "nw"  { nvim "$HOME\Documents\Tools\PSScripts\nw.psm1" }
+        "man" { nvim "$HOME\Documents\Tools\PSScripts\man.psm1" }
+        "adb" { nvim "$HOME\Documents\Tools\PSScripts\adb.psm1" }
+        "py"  { nvim "$HOME\Documents\Tools\PSScripts\py.psm1" }
         default {
             Write-Host "Usage: im [ nw | man | adb | py ]" -ForegroundColor Yellow
         }
@@ -146,14 +146,15 @@ function im {
     )
 
     switch ($name) {
-        "nw"  { Import-Module -DisableNameChecking "$HOME\Documents\Tools\Scripts\nw.psm1" }
-        "man" { Import-Module -DisableNameChecking "$HOME\Documents\Tools\Scripts\man.psm1" }
-        "adb" { Import-Module -DisableNameChecking "$HOME\Documents\Tools\Scripts\adb.psm1" }
-        "py"  { Import-Module -DisableNameChecking "$HOME\Documents\Tools\Scripts\py.psm1" }
+        "nw"  { Import-Module -DisableNameChecking "$HOME\Documents\Tools\PSScripts\nw.psm1" }
+        "man" { Import-Module -DisableNameChecking "$HOME\Documents\Tools\PSScripts\man.psm1" }
+        "adb" { Import-Module -DisableNameChecking "$HOME\Documents\Tools\PSScripts\adb.psm1" }
+        "py"  { Import-Module -DisableNameChecking "$HOME\Documents\Tools\PSScripts\py.psm1" }
         default {
             Write-Host "Usage: im [ nw | man | adb | py ]" -ForegroundColor Yellow
         }
     }
+}
 }
 
 
