@@ -19,7 +19,7 @@ function nw-connect {
 }
 
 # Remove a saved Wi-Fi network
-function nw-forget {
+function nw-rm {
     param (
         [string]$name
     )
