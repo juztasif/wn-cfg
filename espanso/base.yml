@@ -5,6 +5,11 @@ matches:
     replace: |
       - trigger: "#"
         replace: "#"
+        
+  - trigger: ":newm"
+    replace: |
+      - trigger: "@#"
+        replace: "#@gmail.com"
 
   - trigger: ":date"
     replace: "{{mydate}}"
@@ -30,11 +35,9 @@ matches:
         params:
           format: "%d%b%y"
 
-
   # --- Email Shortcuts ---
   - trigger: "@user"
     replace: "user@mail.com"
-
 
   # --- Google Services ---
   - trigger: ":yt"
@@ -66,7 +69,7 @@ matches:
   - trigger: ":at"
     replace: "https://alphatron.tv/home"
   - trigger: ":ha"
-    replace: "https://hianime.sx/home"
+    replace: "https://hianime.cx/home"
 
   # --- AI & Chat Links ---
   - trigger: ":gk"
@@ -83,7 +86,16 @@ matches:
     replace: "https://temp-mail.org/"
   - trigger: ":gt"
     replace: "https://translate.google.com/"
+  - trigger: ":kk"
+    replace: "https://kick.com/"
   - trigger: ":gh"
     replace: "https://github.com/"
+  - trigger: "h:"
+    replace: "https://"
+  - trigger: "lh:"
+    replace: "http://localhost"
+  - trigger: ":ssyt"
+    replace: "https://ssyoutube.online/"
+
 
 
