@@ -41,7 +41,7 @@ matches:
 
   # --- Google Services ---
   - trigger: ":yt"
-    replace: "https://www.youtube.com/"
+    replace: "https://www.youtube.com/?persist_gl=1&gl=AT"
 
   - trigger: ":g0k"
     replace: "https://keep.google.com/u/0/"
@@ -66,8 +66,8 @@ matches:
   # --- Entertainment ---
   - trigger: ":ft"
     replace: "https://flixtor.li/home"
-  - trigger: ":at"
-    replace: "https://alphatron.tv/home"
+  - trigger: ":fm"
+    replace: "https://fmoviesz.tube/home"
   - trigger: ":ha"
     replace: "https://hianime.cx/home"
 
@@ -96,6 +96,7 @@ matches:
     replace: "http://localhost"
   - trigger: ":ssyt"
     replace: "https://ssyoutube.online/"
+
 
 
 
