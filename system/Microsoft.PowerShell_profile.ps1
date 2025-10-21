@@ -207,6 +207,29 @@ function unalias {
     Write-Host "All aliases have been removed for this session." -ForegroundColor Green
 }
 
+# Remove Unwanted Words from Files
+function rm-word { 
+    #$Word = Read-Host "Enter the word or text you want to remove from all filenames"
+    $Word = Read-Host "Enter the word : "
+
+    if ([string]::IsNullOrWhiteSpace($Word)) {
+        Write-Host "No input provided. Exiting..." -ForegroundColor Yellow
+        return
+    }
+
+    # Get all files in the current directory
+    Get-ChildItem -File | ForEach-Object {
+        $oldName = $_.Name
+        $newName = $oldName -replace [regex]::Escape($Word), ''
+
+        if ($oldName -ne $newName) {
+            Write-Host "Renaming: $oldName -> $newName"
+            Rename-Item -Path $_.FullName -NewName $newName
+        }
+    }
+    Write-Host "Done!" -ForegroundColor Green
+}
+
 # Custom Prompt
 function ps2 {
     function global:Prompt {
@@ -216,3 +239,4 @@ function ps2 {
 }
 
 Clear-Host
+
