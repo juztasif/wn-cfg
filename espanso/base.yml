@@ -35,9 +35,29 @@ matches:
         params:
           format: "%d%b%y"
 
-  # --- Email Shortcuts ---
-  - trigger: "@user"
-    replace: "user@mail.com"
+
+  # --- System Locations ---
+  - trigger: ":dk/"
+    replace: "%USERPROFILE%/Desktop"
+  - trigger: ":dn/"
+    replace: "%USERPROFILE%/Downloads"
+  - trigger: ":dc/"
+    replace: "%USERPROFILE%/Documents"
+  - trigger: ":chst/"
+    replace: "%USERPROFILE%/Documents/Cheatsheets"
+  - trigger: ":pc/"
+    replace: "%USERPROFILE%/Pictures"
+  - trigger: ":srsh/"
+    replace: "%USERPROFILE%/Pictures/Screenshots"
+  - trigger: ":ms/"
+    replace: "%USERPROFILE%/Music"
+  - trigger: ":vi/"
+    replace: "%USERPROFILE%/Videos"
+
+
+# --- Email Shortcuts ---
+  - trigger: "@#"
+    replace: "#"
 
   # --- Google Services ---
   - trigger: ":yt"
@@ -64,13 +84,8 @@ matches:
     replace: "https://myaccount.google.com/?authuser=1"
 
   # --- Entertainment ---
-  - trigger: ":ft"
-    replace: "https://flixtor.li/home"
-  - trigger: ":fm"
-    replace: "https://fmoviesz.tube/home"
-  - trigger: ":ha"
-    replace: "https://hianime.cx/home"
 
+  
   # --- AI & Chat Links ---
   - trigger: ":gk"
     replace: "https://grok.com/?referrer=website"
@@ -90,12 +105,7 @@ matches:
     replace: "https://kick.com/"
   - trigger: ":gh"
     replace: "https://github.com/"
-  - trigger: "h:"
-    replace: "https://"
-  - trigger: "lh:"
-    replace: "http://localhost"
-  - trigger: ":ssyt"
-    replace: "https://ssyoutube.online/"
+
 
 
 
