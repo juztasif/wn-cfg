@@ -1,11 +1,11 @@
 # ADB PowerShell Aliases
 
-$env:PATH += ";$home\Documents\Tools\adb"
-
+$env:PATH += ";$home\Documents\Tools\ADB"
 function adb-r($name) {adb uninstall --user 0 $name}
 
 function doit { adb shell settings put global hide_gesture_line 1 }
 function doit-smg { adb shell pm grant com.draco.immersive android.permission.WRITE_SECURE_SETTINGS }
+function doit-smg-r { adb shell pm revoke com.draco.immersive android.permission.WRITE_SECURE_SETTINGS }
 
 function rm-mi-bloat ($name) {
     $packages = @(
@@ -58,32 +58,48 @@ function rm-mi-bloat ($name) {
     }
 }
 
+
 function rm-sm-bloat ($name) {
     $packages = @(
-        "com.google.android.apps.googleassistant",           # Google Assistant
-        "com.samsung.ecomm.global.in",                       # Samsung Shop / Samsung e-Store (India)
-        "com.rsupport.rs.activity.rsupport.aas2",            # RSUPPORT Remote Support
-        "come.google.android.apps.youtube.music",            # (Typo?) Possibly meant to be YouTube Music
-        "com.google.android.apps.youtube.music",             # YouTube Music
-        "com.samsung.android.app",                           # Samsung App (Generic/System)
-        "com.samsung.android.app.tips",                      # Samsung Tips
-        "com.google.android.apps.restore",                   # Google Device Restore Tool
-        "com.google.android.apps.bard",                      # Google Bard
-        "com.microsoft.appmanager",                          # Microsoft App Manager
-        "com.google.android.apps.tachyon",                   # Google Duo / Meet
-        "com.google.android.apps.messaging",                 # Google Messages
-        "com.facebook.services",                             # Facebook Services
-        "com.mygalaxy",                                      # Samsung My Galaxy (India)
-        "com.android.hotwordenrollment.okgoogle",            # Google Hotword Enrollment (OK Google)
-        "com.microsoft.skydrive",                            # Microsoft OneDrive
-        "com.sec.android.easyMover",                         # Samsung Smart Switch (Main App)
-        "com.sec.android.easyMover.Agent",                   # Samsung Smart Switch Agent
-        "com.samsung.android.service.stplatform",            # Samsung SmartThings Platform
-        "com.google.android.cellbroadcastreceiver",          # Google Emergency Alerts
-        "com.google.android.youtube",                        # YouTube
-        "com.samsung.android.app.spage",                     # Samsung Free / Bixby Home
-        "com.samsung.android.mdx"                            # Samsung Multi-Device eXperience (Link to Windows)
-
+        "com.facebook.katana",                                      # Facebook App
+        "com.google.android.videos",                                # Google TV / Play Movies
+        "com.microsoft.office.officehubrow",                        # Microsoft Office Hub
+        "com.microsoft.office.outlook",                             # Microsoft Outlook
+        "com.google.android.apps.photos",                           # Google Photos
+        "com.samsung.sree",                                         # Samsung Sree (India)
+        "com.samsung.android.voc",                                  # Samsung Members Feedback / VOC
+        "com.sec.android.app.sbrowser",                             # Samsung Internet Browser
+        "com.samsung.android.oneconnect",                           # Samsung SmartThings Device Connect
+        "com.rsupport.rs.activity.rsupport.aas2",                   # RSUPPORT Remote Support
+        "com.samsung.android.app.tips",                             # Samsung Tips
+        "com.google.android.apps.youtube.music",                    # YouTube Music
+        "com.google.android.apps.restore",                          # Google Restore Tool
+        "com.sec.android.app.safetyassurance",                      # Samsung Safety & Emergency Feedback
+        "com.samsung.android.emergency",                            # Samsung Emergency App
+        "com.samsung.android.game.gametools",                       # Samsung Game Tools
+        "com.samsung.android.game.gos",                             # Game Optimization Service
+        "com.samsung.android.game.gamehome",                        # Samsung Game Launcher
+        "com.google.android.apps.bard",                             # Google Bard
+        "com.android.hotwordenrollment.xgoogle",                    # Google Hotword Enrollment (Variant)
+        "com.microsoft.appmanager",                                 # Microsoft App Manager
+        "com.samsung.android.mdx",                                  # Link to Windows / Multi-Device Experience
+        "com.google.audio.hearing.visualization.accessibility.scribe", # Google Live Transcribe
+        "com.google.android.apps.messaging",                        # Google Messages
+        "com.google.android.apps.tachyon",                          # Google Meet / Duo
+        "com.facebook.system",                                      # Facebook System Integration
+        "com.facebook.appmanager",                                  # Facebook App Manager
+        "com.facebook.services",                                    # Facebook Services
+        "com.mygalaxy",                                             # Samsung My Galaxy (India)
+        "com.android.hotwordenrollment.okgoogle",                   # OK Google Hotword Enrollment
+        "com.microsoft.skydrive",                                   # Microsoft OneDrive
+        "com.samsung.android.smartsuggestions",                     # Samsung Smart Suggestions
+        "com.samsung.android.app.spage",                            # Samsung Free / Bixby Home
+        "com.samsung.android.kidsinstaller",                        # Samsung Kids Installer
+        "com.sec.android.easyMover",                                # Samsung Smart Switch
+        "com.sec.android.easyMover.Agent",                          # Samsung Smart Switch Agent
+        "com.samsung.android.service.stplatform",                   # Samsung SmartThings Platform
+        "com.google.android.cellbroadcastreceiver",                 # Emergency Alerts
+        "com.google.android.youtube"                                # YouTube
     )
 
     foreach ($package in $packages) {
@@ -91,5 +107,6 @@ function rm-sm-bloat ($name) {
         & adb uninstall --user 0 $package
     }
 }
+
 
 im man
